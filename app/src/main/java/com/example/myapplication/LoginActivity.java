@@ -44,9 +44,10 @@ public class LoginActivity extends AppCompatActivity {
 
     public String emailValidate(String email){
 
-        System.out.println("email: " + email);
+        String regex_pattern_email = "^[\\w!#$%&amp;’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&amp;’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$";
+        Pattern pattern = Pattern.compile(regex_pattern_email);
 
-         if(Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+         if(pattern.matcher(email).matches()) {
              return "Login was successful";
          }else
              return "Invalid login!";

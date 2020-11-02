@@ -32,7 +32,7 @@ public class LoginUnitTest {
 
         // ...when the string is returned from the object under test...
         String result_case_valid = myObjectUnderTest.emailValidate("micheal.kagnew@gmail.com");
-        String result_case_invalid = myObjectUnderTest.emailValidate("gabe/cordo~ado@hotmail.net");
+        String result_case_invalid = myObjectUnderTest.emailValidate("gabe@cordo~ado@hotmail.net");
 
         // ...then the result should be the expected one.
         assertThat(result_case_valid, is(VALID_STRING));
