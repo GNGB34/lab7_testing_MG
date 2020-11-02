@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.*;
+
+import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
@@ -36,5 +39,15 @@ public class LoginActivity extends AppCompatActivity {
             return "Login was successful";
         else
             return "Invalid login!";
+    }
+
+
+    public String emailValidate(String email){
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+
+         if(pattern.matcher(email).matches()) {
+             return "Login was successful";
+         }else
+             return "Invalid login!";
     }
 }
