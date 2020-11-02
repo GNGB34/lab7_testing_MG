@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.*;
@@ -41,11 +42,11 @@ public class LoginActivity extends AppCompatActivity {
             return "Invalid login!";
     }
 
-
     public String emailValidate(String email){
-        Pattern pattern = Patterns.EMAIL_ADDRESS;
 
-         if(pattern.matcher(email).matches()) {
+        System.out.println("email: " + email);
+
+         if(Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
              return "Login was successful";
          }else
              return "Invalid login!";
