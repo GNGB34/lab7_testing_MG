@@ -41,12 +41,16 @@ public class LoginUnitTest {
 
     @Test
     public void passEmailVerification(){
+        myObjectUnderTest = new LoginActivity(mMockContext);
+
         String result_case_valid = myObjectUnderTest.emailValidate("micheal.kagnew@gmail.com");
         assertThat(result_case_valid, is(VALID_STRING));
     }
 
     @Test
     public void failEmailVerification(){
+        myObjectUnderTest = new LoginActivity(mMockContext);
+
         String result_case_invalid = myObjectUnderTest.emailValidate("gabe@cordo~ado@hotmail.net");
         assertThat(result_case_invalid, is(INVALID_STRING));
 
